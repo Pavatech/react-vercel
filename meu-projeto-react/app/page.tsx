@@ -3,31 +3,19 @@ const features = [
     title: "Ipsum consequat",
     description: "Nisl amet dolor sit etiam venenatis sed tortor consequat venenatis et magna tempus.",
     color: "text-rose-600",
-    icon: (
-      <svg aria-hidden="true" viewBox="0 0 48 48" className="h-9 w-9 fill-current">
-        <path d="M20 3h8l1.4 5.2a17 17 0 0 1 3.4 1.4l4.8-2.5 5.7 5.7-2.5 4.8a17 17 0 0 1 1.4 3.4L47 22v8l-5.2 1.4a17 17 0 0 1-1.4 3.4l2.5 4.8-5.7 5.7-4.8-2.5a17 17 0 0 1-3.4 1.4L28 49h-8l-1.4-5.2a17 17 0 0 1-3.4-1.4l-4.8 2.5-5.7-5.7 2.5-4.8a17 17 0 0 1-1.4-3.4L1 30v-8l5.2-1.4a17 17 0 0 1 1.4-3.4l-2.5-4.8 5.7-5.7 4.8 2.5a17 17 0 0 1 3.4-1.4L20 3Zm4 14a11 11 0 1 0 0 22 11 11 0 0 0 0-22Zm0 6a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z" />
-      </svg>
-    ),
+    image: "/img/arte/icon1.svg",
   },
   {
     title: "Magna etiam dolor",
     description: "Nibh amet dolore quis velit viverra sed blandit consequat venenatis et magna tempus.",
     color: "text-neutral-600",
-    icon: (
-      <svg aria-hidden="true" viewBox="0 0 32 48" className="h-9 w-7 fill-current">
-        <path d="M8 2h17L20 19h10L9 46l5-20H3L8 2Z" />
-      </svg>
-    ),
+    image: "/img/arte/icon2.svg",
   },
   {
     title: "Tempus adipiscing",
     description: "Nisl amet dolor sit etiam venenatis sed blandit consequat venenatis et magna tempus.",
     color: "text-sky-400",
-    icon: (
-      <svg aria-hidden="true" viewBox="0 0 48 48" className="h-9 w-9 fill-current">
-        <path d="m24 2 6.7 13.6 15 2.2-10.8 10.5 2.5 14.9L24 36.2l-13.4 7 2.5-14.9L2.3 17.8l15-2.2L24 2Z" />
-      </svg>
-    ),
+    image: "/img/arte/icon3.svg",
   },
 ];
 
@@ -35,19 +23,19 @@ const portfolio = [
   {
     title: "Ipsum feugiat et dolor",
     description: "Lorem ipsum dolor sit amet et viverra sed amet blandit consequat venenatis lorem blandit.",
-    image: "/art/portfolio-color.svg",
+    image: "/img/arte/pic02.svg",
     alt: "Composição colorida com plantas, formas e um gato",
   },
   {
     title: "Sed etiam lorem nulla",
     description: "Lorem ipsum dolor sit amet et viverra sed amet blandit consequat venenatis lorem blandit.",
-    image: "/art/portfolio-portrait.svg",
+    image: "/img/arte/pic03.svg",
     alt: "Ilustração de retrato com fundo rosa e formas geométricas",
   },
   {
     title: "Consequat et tempus",
     description: "Lorem ipsum dolor sit amet et viverra sed amet blandit consequat venenatis lorem blandit.",
-    image: "/art/portfolio-paint.svg",
+    image: "/img/arte/pic04.svg",
     alt: "Tintas e pincéis coloridos em uma composição artística",
   },
 ];
@@ -67,7 +55,7 @@ export default function Home() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/art/paint-banner.svg"
+          src="/img/arte/header.png"
           alt="Pincéis e tintas em uma paleta"
           className="absolute top-[-67px] h-[205px] w-[260px] object-cover object-center sm:w-[310px]"
           width="310"
@@ -80,7 +68,13 @@ export default function Home() {
           {features.map((feature) => (
             <article key={feature.title} className="flex flex-col items-center text-center">
               <div className={`flex h-12 items-center justify-center ${feature.color}`}>
-                {feature.icon}
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="h-9 w-9 object-contain"
+                  width="36"
+                  height="36"
+                />
               </div>
               <h2 className="mt-2 text-[11px] font-bold">{feature.title}</h2>
               <p className="mt-2 max-w-[230px] text-[9px] leading-[1.6] text-neutral-400">
